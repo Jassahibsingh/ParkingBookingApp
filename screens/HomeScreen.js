@@ -1,13 +1,13 @@
 import { View, Text, useWindowDimensions, Dimensions, Image } from 'react-native';
-import React, { useState, useCallback, useMemo, useRef } from 'react';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import React, { useState } from 'react';
+import { TabView, TabBar } from 'react-native-tab-view';
 import ParkingLot from './ParkingLot';
 import Bookings from './Bookings';
 import DatePicker from 'react-native-neat-date-picker';
 
 const height = Dimensions.get('screen').height;
 const width = Dimensions.get('screen').width;
-const currentDate = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-0${new Date().getDate()}`;
+const currentDate = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date().getDate()}`;
 
 const HomeScreen = () => {
     const layout = useWindowDimensions();
@@ -25,11 +25,6 @@ const HomeScreen = () => {
     const onConfirm = date => {
         setShowDatePicker(false);
         console.log(date, '---', selectedDateFilter);
-
-        // var tempSelectedDateFilter = [];
-        // tempSelectedDateFilter.push({
-        //     start: date.startDateString,
-        // });
         setSelectedDateFilter(date.dateString);
     };
 
@@ -111,7 +106,6 @@ const HomeScreen = () => {
                     confirmButtonColor: 'red',
                 }}
             />
-
         </View>
     );
 };

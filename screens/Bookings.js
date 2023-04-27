@@ -1,7 +1,5 @@
 import { View, Text, Dimensions, Pressable, Image, ScrollView } from 'react-native';
-import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react';
-import BottomSheet from '@gorhom/bottom-sheet';
-import DatePicker from 'react-native-neat-date-picker';
+import React, { useState, useEffect } from 'react';
 import IconFromFA5 from 'react-native-vector-icons/FontAwesome5'
 import { FlatList } from 'react-native-gesture-handler';
 

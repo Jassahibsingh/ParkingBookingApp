@@ -1,4 +1,4 @@
-import { View, Text, Image, Dimensions } from 'react-native'
+import { View, Image, Dimensions } from 'react-native'
 import React from 'react'
 import { Button } from '@react-native-material/core';
 import Icon from 'react-native-vector-icons/Entypo';

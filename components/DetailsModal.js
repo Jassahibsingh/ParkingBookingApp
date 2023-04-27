@@ -8,12 +8,9 @@ import {
     View,
     Dimensions,
     TextInput,
-    Button,
-    TouchableOpacity,
 } from 'react-native';
 import IconFromFA from 'react-native-vector-icons/FontAwesome';
 import TimeRangePicker from 'react-native-range-timepicker';
-import CalendarPicker from 'react-native-calendar-picker';
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -28,16 +25,6 @@ const DetailsModal = props => {
     const [selectedStartDate, setSelectedStartDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
     const [visible, setVisible] = React.useState(false);
-
-
-    const onDateChange = (date, type) => {
-        if (type === 'END_DATE') {
-            setSelectedEndDate(date);
-        } else {
-            setSelectedStartDate(date);
-            setSelectedEndDate(null);
-        }
-    };
 
     const onSelect = time => {
         console.log('time-', time);
@@ -115,7 +102,7 @@ const DetailsModal = props => {
                             style={styles.input}
                             onChangeText={setVehicleNumber}
                             value={vehicleNumber}
-                            placeholder="DL4C-8088"
+                            placeholder="DL4S-8088"
                         />
                     </View>
                     <Pressable
@@ -135,16 +122,13 @@ const DetailsModal = props => {
 const styles = StyleSheet.create({
     centeredView: {
         justifyContent: 'center',
-        // alignItems: 'center',
         margin: 22,
         padding: 20,
         borderRadius: 20,
         backgroundColor: 'white',
-        // height: height * 0.2
     },
     modalView: {
         margin: 20,
-        // backgroundColor: 'white',
         borderRadius: 20,
         padding: 35,
         alignItems: 'center',
